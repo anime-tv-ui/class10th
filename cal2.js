@@ -5,7 +5,7 @@ function storeData() {
   localStorage.setItem("dob", dob);
   localStorage.setItem("regno",regno);
   if (regno==="25139261"){
-	  document.write("reload!!")
+	  
   window.location.href = "25139261.html";
   }
 }
