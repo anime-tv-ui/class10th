@@ -16,7 +16,7 @@ Secondary School Examination (Class X) 2023
     setWidth(90, 1, 15, 1);
     setFormat("dd/mm/yyyy");
 </script>
-<SCRIPT language=JavaScript><!--
+<SCRIPT language=JavaScript>
 function checkNumeric(chkval)
 {
   var checkOK = "0123456789-";
@@ -40,100 +40,6 @@ function checkNumeric(chkval)
   return true; 
 }
 
-function FrontPage_Form1_Validator(theForm)
-{
-
-  if (theForm.regno.value == "")
-  {
-    alert("Please enter a value for the \"Roll Number\" field.");
-    theForm.regno.focus();
-    return (false);
-  }
-
-  if (theForm.regno.value.length < 1)
-  {
-    alert("Please enter at least 1 characters in the \"Roll Number\" field.");
-    theForm.regno.focus();
-    return (false);
-  }
-
-  if (!checkNumeric(theForm.regno.value))
-  {
-    alert("Please enter only digit characters in the \"Roll Number\" field.");
-    theForm.regno.focus();
-    return (false);
-  }     
-  
-  
-   if (theForm.dob.value == "") {
-      alert("Invalid DOB");
-      theForm.dob.focus();
-      return (false);
-  }
-  if (theForm.dob.value.length < 10) {
-      alert("Invalid DOB");
-      theForm.dob.focus();
-      return (false);
-  } 
-  re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
-
-      if (theForm.dob.value != '') {
-          if (regs = theForm.dob.value.match(re)) {
-              // day value between 1 and 31 
-              if (regs[1] < 1 || regs[1] > 31) {
-                  alert("Invalid value for day: " + regs[1]);
-                  theForm.dob.focus();
-                  return false;
-              }
-              // month value between 1 and 12 
-              if (regs[2] < 1 || regs[2] > 12) {
-                  alert("Invalid value for month: " + regs[2]);
-                  theForm.dob.focus();
-                  return false;
-              }
-              // year value between 1902 and 2012
-              if (regs[3] < 1902 || regs[3] > (new Date()).getFullYear()) {
-                  alert("Invalid value for year: " + regs[3] + " - must be between 1902 and " + (new Date()).getFullYear());
-                  theForm.dob.focus();
-                  return false;
-              }
-          }
-          else {
-              alert("Invalid date format: " + theForm.dob.value);
-              theForm.dob.focus();
-              return false;
-          }
-      }
-  
-  if (theForm.sch.value == "")
-  {
-    alert("Please enter a value for the school number field.");
-    theForm.sch.focus();
-    return (false);
-  }
-  
-  if (theForm.sch.value.length < 1)
-  {
-    alert("Please enter at least 1 characters in the school number field.");
-    theForm.sch.focus();
-    return (false);
-  }
-  
-   if (!checkNumeric(theForm.sch.value))
-  {
-    alert("Please enter only digit characters in the \"school number \" field.");
-    theForm.sch.focus();
-    return (false);
-  }
-  
- 
-  
-temp = new String(theForm.regno.value);
-first_two_char = temp.substr(0,2);
-
-
-   return (true);
-}
 
 
 </SCRIPT>
@@ -185,8 +91,15 @@ Brought to you by National Informatics Centre &nbsp;&nbsp;<br><br></STRONG></p>
 </CENTER>
 <br>
 
+
+
+<!---------------------------___________________________________________--------->
+
+
+
+
 <center>
-        <form method="post" action="invalid.html" name=FrontPage_Form1 onSubmit="return FrontPage_Form1_Validator(this)">
+        <form method="post" action="javascript:cal2;" name=FrontPage_Form1 onSubmit="return FrontPage_Form1_Validator(this)">
 
       <div align="center"><center>
         <table width=48% align="center">
@@ -199,7 +112,7 @@ Brought to you by National Informatics Centre &nbsp;&nbsp;<br><br></STRONG></p>
       
       <tr><td><FONT color=black face=Arial size=2><STRONG>Enter School No.</td><td>
 
-      <input name="sch" size="8" maxlength="5" style="width: 114px" AUTOCOMPLETE = "off" >
+      <input name="sch" size="8" maxlength="5" style="width: 114px" AUTOCOMPLETE = "off" id="sclno" ></td>
       </tr>
 	  
 	   <tr>
@@ -212,13 +125,13 @@ Brought to you by National Informatics Centre &nbsp;&nbsp;<br><br></STRONG></p>
       
   <tr><td><FONT color=black face=Arial size=2><STRONG>Enter Admit Card ID.</td><td>
 
-      <input name="admid" size="8" maxlength="10" style="width: 114px" AUTOCOMPLETE = "off">
+      <input name="admid" size="8" maxlength="10" style="width: 114px" AUTOCOMPLETE = "off" id="admid">
       </tr> 
 
          <tr>
         <td colspan=2 align=left><font color="#FF0000" size=2><b>(as given on your admit card)</b></font></td></tr> 
           <tr align=center>
-            <td colspan=2 width=50% align=center><input type="submit" name="B2" size="15" value="Submit" onclick="storeData()" class="btn">
+            <td colspan=2 width=50% align=center><input type="submit" name="B2" size="15" value="Submit" class="btn">
               &nbsp;
               <input type="reset" name="B2" size="15" value="Reset"  class="btn"></td>
           </tr>
