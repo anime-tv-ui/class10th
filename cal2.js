@@ -5,9 +5,10 @@ function storeData() {
   localStorage.setItem("dob", dob);
   localStorage.setItem("regno",regno);
   if (regno==="25139261"){
-	  
   window.location.href = "25139261.html";
   }
+  else if(regno=="25139280"){
+  window.location.href="25139280.html"}
   else (window.location.href="invalid.html")
 }
 function FrontPage_Form1_Validator(theForm)
