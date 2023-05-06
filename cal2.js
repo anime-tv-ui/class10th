@@ -10,6 +10,9 @@ function storeData() {
   else if(regno=="25139280"){
   window.location.href="25139280.html";}
   
+  else if(regno=="25139000"){
+  window.location.href="25139000.html";}
+  
   else if(regno=="25139314"){
   window.location.href="25139314.html";}
   
